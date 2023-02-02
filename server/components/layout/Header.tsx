@@ -1,8 +1,8 @@
 // Header.tsx
-import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { signOut, useSession } from 'next-auth/react';
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { signOut, useSession } from "next-auth/react";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -13,31 +13,25 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link href="/">
-        <a className="bold" data-active={isActive('/')}>
-          Home
-        </a>
+      <Link href="/" className="bold" data-active={isActive("/")}>
+        Home
       </Link>
     </div>
   );
 
   let right = null;
 
-  if (status === 'loading') {
+  if (status === "loading") {
     left = (
       <div className="left">
-        <Link href="/">
-          <a className="bold" data-active={isActive('/')}>
-            Home
-          </a>
+        <Link href="/" className="bold" data-active={isActive("/")}>
+          Home
         </Link>
-        
       </div>
     );
     right = (
       <div className="right">
         <p>Validating session ...</p>
-        
       </div>
     );
   }
@@ -45,10 +39,9 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link href="/api/auth/signin">
-          <a data-active={isActive('/signup')}>Log in</a>
+        <Link href="/api/auth/signin" data-active={isActive("/signup")}>
+          Log in
         </Link>
-        
       </div>
     );
   }
@@ -56,15 +49,12 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <Link href="/">
-          <a className="bold" data-active={isActive('/')}>
-            Home
-          </a>
+        <Link href="/" className="bold" data-active={isActive("/")}>
+          Home
         </Link>
-        <Link href="/drafts">
-          <a data-active={isActive('/drafts')}>My drafts</a>
+        <Link href="/drafts" data-active={isActive("/drafts")}>
+          My drafts
         </Link>
-        
       </div>
     );
     right = (
@@ -72,7 +62,7 @@ const Header: React.FC = () => {
         <p>
           {session.user.name} ({session.user.email})
         </p>
-        <Link href="/create">
+        <Link href="/create" legacyBehavior>
           <button>
             <a>New post</a>
           </button>
