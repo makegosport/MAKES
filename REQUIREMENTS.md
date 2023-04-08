@@ -1,8 +1,7 @@
 # Basic Goals
  - Allow members with an RFID fob to access restricted machines when inducted.
- - ALlow members with an RFID key fob to enter the makerspace.
+ - Allow members with an RFID fob to enter the makerspace.
  - Maintain a "fire list" of members that are in the space at any given time.
-
 
 ## Machine Access
 ### Basics
