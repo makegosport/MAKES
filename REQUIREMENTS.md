@@ -1,7 +1,7 @@
 # Basic Goals
  - Allow members with an RFID fob to access restricted machines when inducted.
  - Allow members with an RFID fob to enter the makerspace.
- - Maintain and display a "who in" list visible on discord controlled by MakeyBot with possible opt out functionality. 
+ - Maintain and display a "who in" list visible on discord via MakeyBot with possible opt out functionality. 
  - Maintain a "fire list" of members that are in the space at any given time (logged regardless of opt out status within "who's here".
 
 ## Machine Access
