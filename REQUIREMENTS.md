@@ -1,7 +1,8 @@
 # Basic Goals
  - Allow members with an RFID fob to access restricted machines when inducted.
  - Allow members with an RFID fob to enter the makerspace.
- - Maintain a "fire list" of members that are in the space at any given time.
+ - Maintain and display a "who in" list visible on discord controlled by MakeyBot with possible opt out functionality. 
+ - Maintain a "fire list" of members that are in the space at any given time (logged regardless of opt out status within "who's here".
 
 ## Machine Access
 ### Basics
@@ -18,11 +19,18 @@
  - Member scans RFID fob, door unlocks. Should be as fast a response as possible.
  - Member door access logged and visible to admin.
  - Members must scan out of the space.
+ - Override functionality (?keypad and code).
 
 ### Possible extensions
  - Member access only when keyholder present.
  - Last keyholder to leave marks any remaining members as absent.
  - Register new member fobs at the door scanner (with Makeybot)
+
+## Fire List
+### Basics
+ - A requestable Fire log for the building of members who are "here" requestable by anyone.
+ - Fast response from MakeyBot, instant notification advising who requested access to admin/mod team.
+ - ?Own discord channel or message
 
 ## Technicalities
  - Discord bot to remain a separate entity, graphql access to data.
