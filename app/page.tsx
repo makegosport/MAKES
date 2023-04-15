@@ -1,6 +1,12 @@
-import supabase from "@/lib/supabase-client";
+import { Database } from "@/lib/database.types";
+import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { headers, cookies } from "next/headers";
 
 const Home = async () => {
+  const supabase = createServerComponentSupabaseClient<Database>({
+    headers,
+    cookies,
+  });
   const { data, error } = await supabase.from("posts").select("*");
 
   return (

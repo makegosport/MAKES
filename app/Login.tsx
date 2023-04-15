@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <div>
       {user ? (
-        <div>{user.email}</div>
+        <pre>{`Logged in as ${user.user_metadata.full_name}`}</pre>
       ) : (
         <button onClick={signIn}>Sign In</button>
       )}
