@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -e .env.local -- supabase start && next dev",
-    "supabase:status": "dotenv -e .env.local -- supabase status",
-    "supabase:generate-types": "supabase gen types typescript --local > lib/database.types.ts",
-    "supabase:serve-functions": "dotenv -e .env.local -- supabase functions serve --env-file ./supabase/.env.local --no-verify-jwt",
-    "supabase:stop": "dotenv -e .env.local -- supabase stop --backup",
+    "stage:dev": "dotenv -e .env -- next dev",
+    "local:dev": "dotenv -e .env.local -- supabase start && next dev",
+    "local:supabase:status": "dotenv -e .env.local -- supabase status",
+    "local:supabase:generate-types": "supabase gen types typescript --local > lib/database.types.ts",
+    "local:supabase:serve-functions": "dotenv -e .env.local -- supabase functions serve --env-file ./supabase/.env.local --no-verify-jwt",
+    "local:supabase:diff": "supabase db diff --schema public",
+    "local:supabase:stop": "dotenv -e .env.local -- supabase stop --backup",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
